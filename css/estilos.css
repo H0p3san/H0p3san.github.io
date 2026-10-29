@@ -246,8 +246,23 @@ a { color: inherit; }
   .particula { display: none; }
 }
 /* Doname: dos fajos de billetes, dólares a PayPal y pesos a Cafecito. */
-.doname { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 8px 0 16px; }
-.doname__cartel { margin: 0; font: 400 30px/1 "Anton", sans-serif; text-transform: uppercase; color: var(--rojo); transform: rotate(-4deg); }
+/* El cartel arriba, del ancho de los dos billetes, y los billetes uno al lado del otro (2026-10-29, "que el doname ocupe
+   el espacio de los dos billetes y abajo los dos billetes uno a la par del otro"). */
+.doname { display: inline-grid; grid-template-columns: auto auto; gap: 10px 20px; margin: 8px 0 16px; justify-items: center; }
+.doname__cartel {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  margin: 0;
+  padding: 6px 0;
+  text-align: center;
+  font: 400 34px/1 "Anton", sans-serif;
+  text-transform: uppercase;
+  color: var(--blanco);
+  background: var(--rojo);
+  border: 3px solid var(--negro);
+  box-shadow: var(--sombra);
+  transform: rotate(-1.5deg);
+}
 .billete { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font: 700 13px "Silkscreen", monospace; }
 .billete img { width: 130px; filter: drop-shadow(4px 4px 0 var(--negro)); transition: transform .12s; }
 .billete:hover img, .billete:focus-visible img { transform: rotate(-4deg) scale(1.08); }
