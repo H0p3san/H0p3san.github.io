@@ -1,0 +1,299 @@
+/* El bazar de El Hope-san: amarillo, negro y rojo, como el concepto. */
+:root {
+  --amarillo: #ffe600;
+  --negro: #111111;
+  --rojo: #e8202a;
+  --crema: #f5e6c8;
+  --oso: #8b5a3c;
+  --oso-oscuro: #6b3f2a;
+  --dorado: #f2b21b;
+  --discord: #5865f2;
+  --blanco: #ffffff;
+  --sombra: 4px 4px 0 var(--negro);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--amarillo);
+  color: var(--negro);
+  font: 400 18px/1.5 "Rubik", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+/* ── la cinta del pregón ─────────────────────────────────────────── */
+.pregon {
+  background: var(--negro);
+  color: var(--amarillo);
+  overflow: hidden;
+  white-space: nowrap;
+  font: 700 18px/1 "Silkscreen", monospace;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+.pregon__cinta { display: inline-flex; gap: 48px; animation: pregon 22s linear infinite; padding-left: 16px; }
+@keyframes pregon { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .pregon__cinta { animation: none; } }
+
+/* ── cabecera ────────────────────────────────────────────────────── */
+.cabecera {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  position: relative;
+}
+.cabecera__logo img { width: 260px; }
+.cabecera__menu { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── botones ─────────────────────────────────────────────────────── */
+.boton {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 3px solid var(--negro);
+  box-shadow: var(--sombra);
+  font: 800 18px/1.2 "Rubik", sans-serif;
+  text-decoration: none;
+  transition: transform .08s, box-shadow .08s;
+}
+.boton:hover, .boton:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--negro); }
+.boton:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--negro); }
+.boton:focus-visible { outline: 3px dashed var(--rojo); outline-offset: 4px; }
+.boton--negro { background: var(--negro); color: var(--amarillo); transform: rotate(-2deg); }
+.boton--crema { background: var(--crema); }
+.boton--discord { background: var(--discord); color: var(--blanco); }
+.boton--grande {
+  background: var(--negro);
+  color: var(--amarillo);
+  font: 400 clamp(22px, 3vw, 34px)/1 "Anton", sans-serif;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 14px 26px;
+}
+
+/* ── notas pegadas, escritas a mano ──────────────────────────────── */
+.nota {
+  font: 700 22px/1.2 "Caveat", cursive;
+  background: var(--crema);
+  border: 2px solid var(--negro);
+  padding: 4px 12px;
+  display: inline-block;
+  margin: 0;
+}
+.nota--atendido { margin-left: auto; transform: rotate(-4deg); }
+.nota--aclaracion { position: absolute; top: 118px; right: -30px; z-index: 1; font-size: 18px; transform: rotate(-6deg); }
+.nota--maquina { transform: rotate(-5deg); margin-top: 24px; }
+
+/* ── portada ─────────────────────────────────────────────────────── */
+.portada {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 24px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+}
+.portada__texto { position: relative; }
+.titular {
+  font: 400 clamp(44px, 7vw, 92px)/.95 "Anton", sans-serif;
+  text-transform: uppercase;
+  margin: 0 0 24px;
+  text-shadow: 3px 3px 0 var(--blanco);
+}
+.subrayado { text-decoration: underline var(--rojo) 8px; text-underline-offset: 8px; }
+.portada__acciones { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.enlace-discord {
+  font: 700 24px/1 "Caveat", cursive;
+  color: var(--discord);
+  text-decoration: underline 3px;
+}
+.portada__oso { margin: 0; position: relative; }
+.portada__oso img {
+  /* El oso viene recortado (PNG sin fondo): sombra que sigue su silueta, no un marco. */
+  filter: drop-shadow(8px 8px 0 var(--negro));
+  transform: rotate(1.5deg);
+}
+
+/* ── el sello rojo en estrella ───────────────────────────────────── */
+.sello {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  z-index: 1;
+  width: 170px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font: 400 26px/1 "Anton", sans-serif;
+  text-transform: uppercase;
+  color: var(--blanco);
+  transform: rotate(10deg);
+  clip-path: polygon(50% 0, 61% 12%, 77% 6%, 79% 22%, 95% 25%, 88% 40%, 100% 50%, 88% 60%, 95% 75%, 79% 78%, 77% 94%, 61% 88%, 50% 100%, 39% 88%, 23% 94%, 21% 78%, 5% 75%, 12% 60%, 0 50%, 12% 40%, 5% 25%, 21% 22%, 23% 6%, 39% 12%);
+}
+.sello--rojo { background: var(--rojo); }
+.sello span { width: 70%; }
+
+/* ── franja a cuadros ────────────────────────────────────────────── */
+.franja {
+  height: 32px;
+  background: repeating-conic-gradient(var(--negro) 0 25%, var(--blanco) 0 50%) 0 0 / 32px 32px;
+}
+
+/* ── secciones ───────────────────────────────────────────────────── */
+.seccion { max-width: 1200px; margin: 0 auto; padding: 48px 16px; }
+.cartel {
+  display: table;
+  margin: 0 auto 32px;
+  background: var(--negro);
+  color: var(--amarillo);
+  font: 700 clamp(20px, 3vw, 32px)/1.1 "Silkscreen", monospace;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 3px solid var(--amarillo);
+  box-shadow: 0 0 0 3px var(--negro);
+}
+
+/* ── la vitrina de un mod disponible ─────────────────────────────── */
+.vitrina {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  background: var(--crema);
+  border: 4px solid var(--negro);
+  box-shadow: 10px 10px 0 var(--negro);
+  padding: 24px;
+  position: relative;
+}
+/* Cinta de embalar en la esquina. */
+.vitrina::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 40px;
+  width: 120px;
+  height: 28px;
+  background: rgba(255, 230, 0, .85);
+  border: 2px dashed var(--negro);
+  transform: rotate(-4deg);
+}
+.vitrina__galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.vitrina__foto { border: 3px solid var(--negro); width: 100%; height: 100%; object-fit: cover; }
+.vitrina__foto--grande { grid-column: 1 / -1; }
+.vitrina__titulo { font: 400 clamp(40px, 5vw, 64px)/1 "Anton", sans-serif; text-transform: uppercase; margin: 8px 0; }
+.vitrina__bajada { font-size: 20px; font-weight: 600; margin: 0 0 12px; }
+.vitrina__lista { margin: 0 0 16px; padding-left: 20px; }
+.vitrina__lista li { margin-bottom: 4px; }
+.vitrina__botones { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.nota--ia { transform: rotate(-2deg); font-size: 20px; }
+.nota--ia a { color: var(--rojo); }
+
+.etiqueta {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 12px 4px 20px;
+  font: 700 14px/1.4 "Silkscreen", monospace;
+  text-transform: uppercase;
+  background: var(--amarillo);
+  border: 2px solid var(--negro);
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 10px 100%, 0 50%);
+}
+.etiqueta--vitrina { background: #7ed957; }
+
+.precio { font: 400 28px/1 "Anton", sans-serif; text-transform: uppercase; margin: 0; }
+.precio span { color: var(--rojo); }
+.precio small { font: 700 20px "Caveat", cursive; text-transform: none; }
+
+.boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
+.boton--apagado:hover { transform: none; box-shadow: none; }
+
+/* ── la votación: los productos que vienen ───────────────────────── */
+.seccion__bajada { max-width: 760px; margin: 0 auto 12px; text-align: center; font-size: 20px; font-weight: 600; }
+.seccion__leyenda { max-width: 760px; margin: 12px auto 32px; text-align: center; font-size: 16px; }
+.nota--auditados { display: table; margin: 0 auto; transform: rotate(-3deg); }
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+.producto {
+  display: flex;
+  flex-direction: column;
+  background: var(--blanco);
+  border: 4px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  padding: 16px;
+}
+.producto:nth-child(odd) { transform: rotate(-.6deg); }
+.producto:nth-child(even) { transform: rotate(.6deg); }
+.producto__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--amarillo); border: 3px solid var(--negro); margin-bottom: 12px; }
+.producto__nombre { font: 400 34px/1 "Anton", sans-serif; text-transform: uppercase; margin: 10px 0 4px; }
+.producto__bajada { font-weight: 800; margin: 8px 0; }
+.producto__lista { margin: 0 0 8px; padding-left: 20px; font-size: 16px; }
+.producto__lista li { margin-bottom: 6px; }
+.producto__remate { font: 700 22px/1.1 "Caveat", cursive; color: var(--rojo); margin: 4px 0 16px; }
+.producto__voto { margin-top: auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.cuotas { margin: 0; font: 400 22px/1 "Anton", sans-serif; text-transform: uppercase; color: var(--rojo); }
+.cuotas small { font: 700 13px "Silkscreen", monospace; color: var(--negro); text-transform: lowercase; }
+
+.etiqueta--nuevo { background: #ffd1dc; }
+.etiqueta--sinpapeles { background: var(--negro); color: var(--amarillo); }
+.etiqueta--deposito { background: #c9b28a; }
+.etiqueta--contenedor { background: #8fd3ff; }
+
+.boton--votar { background: var(--amarillo); cursor: pointer; font-size: 18px; }
+.boton--votar[disabled] { background: #7ed957; cursor: default; }
+.contador { margin: 0; font-size: 16px; }
+.contador strong { font: 400 26px "Anton", sans-serif; }
+
+.seccion__pie { text-align: center; margin-top: 48px; font-size: 20px; font-weight: 600; }
+
+/* ── pie de página ───────────────────────────────────────────────── */
+.pie { background: var(--negro); color: var(--amarillo); padding: 32px 16px 24px; }
+.pie__remate {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.pie__oso { width: 72px; }
+.pie__remate p { margin: 0; font: 400 clamp(24px, 3.4vw, 40px)/1.1 "Anton", sans-serif; text-transform: uppercase; flex: 1 1 400px; }
+.enlace-discord--claro { color: #8c96ff; }
+.pie__enlaces {
+  max-width: 1200px;
+  margin: 24px auto 0;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  font: 700 16px/1 "Silkscreen", monospace;
+  text-transform: uppercase;
+}
+.pie__enlaces a { color: var(--amarillo); }
+.pie__enlaces span { color: #888; }
+.pie__creditos { max-width: 1200px; margin: 20px auto 0; font-size: 14px; color: #ccc; }
+.pie__creditos a { color: #ccc; }
+
+/* ── celular ─────────────────────────────────────────────────────── */
+@media (max-width: 800px) {
+  .portada { grid-template-columns: 1fr; }
+  .vitrina { grid-template-columns: 1fr; padding: 16px; box-shadow: 6px 6px 0 var(--negro); }
+  .productos { grid-template-columns: 1fr; }
+  .producto { box-shadow: 6px 6px 0 var(--negro); }
+  .sello { width: 120px; font-size: 18px; top: -30px; right: -6px; }
+  .nota--aclaracion { top: 80px; right: -6px; }
+  .nota--atendido { display: none; }
+  .cabecera__logo img { width: 200px; }
+}
