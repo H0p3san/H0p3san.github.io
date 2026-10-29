@@ -193,6 +193,10 @@ a { color: inherit; }
 .vitrina__galeria { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
 .vitrina__foto { border: 3px solid var(--negro); width: 100%; height: 100%; object-fit: cover; }
 .vitrina__foto--grande { grid-column: 1 / -1; }
+/* Botones, Doname y nota en una fila de abajo a todo el ancho (2026-10-29, "las fotos terminan un buen cacho arriba de
+   donde terminan los botones"): la columna de texto queda a la altura de las fotos. */
+.vitrina__pie { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; border-top: 3px dashed var(--negro); padding-top: 16px; }
+.vitrina__pie .vitrina__botones, .vitrina__pie .doname { margin: 0; }
 .vitrina__titulo { font: 400 clamp(40px, 5vw, 64px)/1 "Anton", sans-serif; text-transform: uppercase; margin: 8px 0; }
 .vitrina__bajada { font-size: 20px; font-weight: 600; margin: 0 0 12px; }
 .vitrina__lista { margin: 0 0 16px; padding-left: 20px; }
