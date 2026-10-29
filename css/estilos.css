@@ -88,7 +88,10 @@ a { color: inherit; }
   display: inline-block;
   margin: 0;
 }
-.nota--atendido { margin-left: auto; transform: rotate(-4deg); }
+/* Fuera de la fila de botones (2026-10-29, "cuando lo paso a la version en ingles todo despues del boton baja un renglon"):
+   con texto de distinto largo en cada idioma, a veces entraba en el renglón y a veces no, y movía toda la página. */
+.nota--atendido { position: absolute; top: 10px; right: 16px; font-size: 18px; transform: rotate(-4deg); }
+@media (max-width: 1250px) { .nota--atendido { display: none; } }
 .nota--aclaracion { position: absolute; top: 118px; right: -30px; z-index: 1; font-size: 18px; transform: rotate(-6deg); }
 .nota--maquina { transform: rotate(-5deg); margin-top: 24px; }
 
