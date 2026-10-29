@@ -259,6 +259,22 @@ a { color: inherit; }
 
 .seccion__pie { text-align: center; margin-top: 48px; font-size: 20px; font-weight: 600; }
 
+/* ── agradecimientos ──────────────────────────────────────────────── */
+.gracias { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.gracias__tarjeta {
+  background: var(--crema);
+  border: 4px solid var(--negro);
+  box-shadow: 8px 8px 0 var(--negro);
+  padding: 20px;
+  font-size: 18px;
+}
+.gracias__tarjeta:first-child { transform: rotate(-1deg); }
+.gracias__tarjeta:last-child { transform: rotate(1deg); }
+.gracias__tarjeta p { margin: 0; }
+.gracias__quienes { font: 400 30px/1.1 "Anton", sans-serif; text-transform: uppercase; margin-bottom: 8px !important; }
+.gracias__quienes a { color: var(--rojo); }
+.nota--gracias { display: table; margin: 32px auto 0; transform: rotate(-2deg); font-size: 26px; }
+
 /* ── pie de página ───────────────────────────────────────────────── */
 .pie { background: var(--negro); color: var(--amarillo); padding: 32px 16px 24px; }
 .pie__remate {
