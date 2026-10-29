@@ -1,5 +1,6 @@
 // La radio del bazar: apagada de entrada (los navegadores no dejan que el audio arranque solo), se prende y se apaga con
-// el botón de la cabecera. Pasa los temas uno detrás del otro y vuelve a empezar; mientras suena, de la radio salen notas.
+// el botón de la cabecera. Cada click pasa al siguiente: tema 1, tema 2, apagado (2026-10-29, "se puede ir ciclando por los
+// temas con click?"). Si un tema termina solo, sigue el próximo. Mientras suena, de la radio salen notas.
 const TEMAS = [
   { archivo: "musica/hopes-bazaar.mp3", nombre: "Hope’s Bazaar" },
   { archivo: "musica/workshop-stomp.mp3", nombre: "Workshop Stomp" },
@@ -29,29 +30,25 @@ function soltarParticula() {
 function mostrar(sonando) {
   perilla.setAttribute("aria-pressed", sonando ? "true" : "false");
   texto.textContent = sonando ? TEMAS[actual].nombre : "Radio del bazar";
-  perilla.title = sonando ? "Apagar la radio" : "Prender la radio";
+  perilla.title = !sonando ? "Prender la radio" : actual < TEMAS.length - 1 ? "Siguiente tema" : "Apagar la radio";
   clearInterval(chispero);
   chispero = sonando && !quieto.matches ? setInterval(soltarParticula, 420) : null;
 }
 
 // Terminó un tema: el siguiente (y después del último, el primero).
-radio.addEventListener("ended", () => {
-  actual = (actual + 1) % TEMAS.length;
-  radio.src = TEMAS[actual].archivo;
-  radio.play().catch(() => mostrar(false));
-});
+radio.addEventListener("ended", () => poner((actual + 1) % TEMAS.length));
 // El botón sigue al audio aunque se pause por otro lado (auriculares, teclas multimedia).
 radio.addEventListener("pause", () => { if (!radio.ended) mostrar(false); });
 radio.addEventListener("play", () => mostrar(true));
 
-perilla.addEventListener("click", async () => {
-  if (radio.paused) {
-    try {
-      await radio.play();
-    } catch {
-      mostrar(false);
-    }
-  } else {
-    radio.pause();
-  }
+function poner(i) {
+  actual = i;
+  radio.src = TEMAS[actual].archivo;
+  radio.play().catch(() => mostrar(false));
+}
+
+perilla.addEventListener("click", () => {
+  if (radio.paused) poner(0);                                   // apagada: arranca por el primero
+  else if (actual < TEMAS.length - 1) poner(actual + 1);        // sonando: el siguiente
+  else radio.pause();                                           // el último: se apaga
 });
