@@ -2,6 +2,9 @@
 // inglés de cada elemento con data-i18n. El botón ES · EN de la cabecera cambia y lo recuerda; la primera vez se elige
 // según el idioma del navegador (español si empieza con "es", inglés si no).
 const INGLES = {
+  "d0": "Donate 💸",
+  "d1": "Dollars · PayPal",
+  "d2": "Pesos · Cafecito",
   "t0": "✦ The bazaar is open",
   "t1": "No obligation to buy",
   "t2": "Go home with a mod",

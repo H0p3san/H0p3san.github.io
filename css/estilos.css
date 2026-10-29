@@ -245,7 +245,13 @@ a { color: inherit; }
   .boton--radio[aria-pressed="true"] .boton--radio__aparato { animation: none; }
   .particula { display: none; }
 }
-.boton--cafecito { background: #f5a25d; }
+/* Doname: dos fajos de billetes, dólares a PayPal y pesos a Cafecito. */
+.doname { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 8px 0 16px; }
+.doname__cartel { margin: 0; font: 400 30px/1 "Anton", sans-serif; text-transform: uppercase; color: var(--rojo); transform: rotate(-4deg); }
+.billete { display: flex; flex-direction: column; align-items: center; gap: 4px; text-decoration: none; font: 700 13px "Silkscreen", monospace; }
+.billete img { width: 130px; filter: drop-shadow(4px 4px 0 var(--negro)); transition: transform .12s; }
+.billete:hover img, .billete:focus-visible img { transform: rotate(-4deg) scale(1.08); }
+.billete:focus-visible { outline: 3px dashed var(--rojo); outline-offset: 4px; }
 .boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--apagado:hover { transform: none; box-shadow: none; }
 
