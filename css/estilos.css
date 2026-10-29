@@ -213,6 +213,7 @@ a { color: inherit; }
 .precio span { color: var(--rojo); }
 .precio small { font: 700 20px "Caveat", cursive; text-transform: none; }
 
+.boton--cafecito { background: #f5a25d; }
 .boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--apagado:hover { transform: none; box-shadow: none; }
 
