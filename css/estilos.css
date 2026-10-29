@@ -214,8 +214,37 @@ a { color: inherit; }
 .precio span { color: var(--rojo); }
 .precio small { font: 700 20px "Caveat", cursive; text-transform: none; }
 
-.boton--radio { background: var(--amarillo); cursor: pointer; }
+/* La radio: el aparato a la izquierda; sonando, se sacude y le salen notas (radio.js). */
+.boton--radio {
+  background: var(--amarillo);
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px 4px 8px;
+}
+.boton--radio__aparato { width: 40px; }
 .boton--radio[aria-pressed="true"] { background: var(--rojo); color: var(--blanco); }
+.boton--radio[aria-pressed="true"] .boton--radio__aparato { animation: sacudida .45s ease-in-out infinite alternate; }
+@keyframes sacudida { from { transform: rotate(-6deg) scale(1.05); } to { transform: rotate(6deg) scale(1.05); } }
+.particula {
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 22px;
+  pointer-events: none;
+  animation: particula 1.6s ease-out forwards;
+}
+@keyframes particula {
+  0% { transform: translate(0, 0) rotate(0) scale(.6); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(var(--dx), -70px) rotate(var(--giro)) scale(1); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boton--radio[aria-pressed="true"] .boton--radio__aparato { animation: none; }
+  .particula { display: none; }
+}
 .boton--cafecito { background: #f5a25d; }
 .boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--apagado:hover { transform: none; box-shadow: none; }
