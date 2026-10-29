@@ -1,5 +1,6 @@
-/* El bazar de El Hope-san: amarillo, negro y rojo, como el concepto. */
+/* El bazar de El Hope-san: fondo celeste (antes amarillo, 2026-10-29) con detalles amarillos, negro y rojo. */
 :root {
+  --fondo: #8fd3ff;
   --amarillo: #ffe600;
   --negro: #111111;
   --rojo: #e8202a;
@@ -16,7 +17,7 @@
 
 body {
   margin: 0;
-  background: var(--amarillo);
+  background: var(--fondo);
   color: var(--negro);
   font: 400 18px/1.5 "Rubik", system-ui, sans-serif;
   overflow-x: hidden;
@@ -237,7 +238,7 @@ a { color: inherit; }
 }
 .producto:nth-child(odd) { transform: rotate(-.6deg); }
 .producto:nth-child(even) { transform: rotate(.6deg); }
-.producto__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--amarillo); border: 3px solid var(--negro); margin-bottom: 12px; }
+.producto__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--fondo); border: 3px solid var(--negro); margin-bottom: 12px; }
 .producto__nombre { font: 400 34px/1 "Anton", sans-serif; text-transform: uppercase; margin: 10px 0 4px; }
 .producto__bajada { font-weight: 800; margin: 8px 0; }
 .producto__lista { margin: 0 0 8px; padding-left: 20px; font-size: 16px; }
@@ -251,7 +252,7 @@ a { color: inherit; }
 .etiqueta--nuevo { background: #ffd1dc; }
 .etiqueta--sinpapeles { background: var(--negro); color: var(--amarillo); }
 .etiqueta--deposito { background: #c9b28a; }
-.etiqueta--contenedor { background: #8fd3ff; }
+.etiqueta--contenedor { background: #c9b6ff; }
 
 .boton--votar { background: var(--amarillo); cursor: pointer; font-size: 18px; }
 .boton--votar[disabled] { background: #7ed957; cursor: default; }
