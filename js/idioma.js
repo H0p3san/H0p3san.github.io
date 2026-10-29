@@ -2,7 +2,12 @@
 // inglés de cada elemento con data-i18n. El botón ES · EN de la cabecera cambia y lo recuerda; la primera vez se elige
 // según el idioma del navegador (español si empieza con "es", inglés si no).
 const INGLES = {
-  "d0": "Donate 💸",
+  "d0": "💸 Donate",
+  "p0": "📦 Get it",
+  "p1": "Modrinth · under review",
+  "p2": "CurseForge · under review",
+  "p3": "Questions? Ask on <a href=\"https://discord.gg/U3gHMNCzrk\">Discord</a>.",
+  "p4": "Helps pay for the AI and bring artists on board.",
   "d1": "Dollars · PayPal",
   "d2": "Pesos · Cafecito",
   "t0": "✦ The bazaar is open",
