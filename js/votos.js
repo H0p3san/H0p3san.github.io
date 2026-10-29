@@ -12,27 +12,38 @@ function anotar(clave) {
   try { localStorage.setItem("voto-" + clave, "1"); } catch { /* sin almacenamiento: no pasa nada */ }
 }
 
-function mostrar(tarjeta, valor) {
+// El último valor de cada tarjeta, para volver a escribirlo al cambiar de idioma.
+const valores = new Map();
+
+function mostrarVotos(tarjeta, valor) {
+  valores.set(tarjeta, valor);
   const contador = tarjeta.querySelector(".contador");
   if (valor === null) {
-    contador.textContent = "El oso se fue a almorzar";
+    contador.textContent = frase("almuerzo");
   } else {
-    contador.innerHTML = "<strong></strong> lo quieren";
+    contador.innerHTML = `<strong></strong> ${frase("quieren")}`;
     contador.querySelector("strong").textContent = valor;
   }
+  const boton = tarjeta.querySelector(".boton--votar");
+  if (boton.disabled && yaVoto(tarjeta.dataset.clave)) boton.textContent = frase("anotado");
 }
+
+document.addEventListener("idioma", () => {
+  for (const [tarjeta, valor] of valores) mostrarVotos(tarjeta, valor);
+});
 
 for (const tarjeta of document.querySelectorAll(".producto[data-clave]")) {
   const clave = tarjeta.dataset.clave;
   const boton = tarjeta.querySelector(".boton--votar");
 
-  if (yaVoto(clave)) { boton.disabled = true; boton.textContent = "✔ Anotado"; }
+  if (yaVoto(clave)) { boton.disabled = true; boton.textContent = frase("anotado"); }
+  mostrarVotos(tarjeta, "…");   // mientras carga, ya en el idioma elegido
 
   fetch(`${API}/get/${ESPACIO}/${clave}`, { cache: "no-store" })
     // 404: todavía nadie votó ese mod y su contador no existe.
     .then(r => r.status === 404 ? { value: 0 } : r.ok ? r.json() : Promise.reject(r.status))
-    .then(d => mostrar(tarjeta, d.value))
-    .catch(() => mostrar(tarjeta, null));
+    .then(d => mostrarVotos(tarjeta, d.value))
+    .catch(() => mostrarVotos(tarjeta, null));
 
   boton.addEventListener("click", async () => {
     if (boton.disabled) return;
@@ -40,12 +51,12 @@ for (const tarjeta of document.querySelectorAll(".producto[data-clave]")) {
     try {
       const r = await fetch(`${API}/hit/${ESPACIO}/${clave}`, { cache: "no-store" });
       if (!r.ok) throw new Error(r.status);
-      mostrar(tarjeta, (await r.json()).value);
+      mostrarVotos(tarjeta, (await r.json()).value);
       anotar(clave);
-      boton.textContent = "✔ Anotado";
+      boton.textContent = frase("anotado");
     } catch {
       boton.disabled = false;
-      mostrar(tarjeta, null);
+      mostrarVotos(tarjeta, null);
     }
   });
 }

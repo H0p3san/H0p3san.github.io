@@ -15,8 +15,8 @@
   <!-- La cinta de arriba: el pregón del bazar. -->
   <div class="pregon" aria-label="Se abrió el bazar">
     <div class="pregon__cinta">
-      <span>✦ Se abrió el bazar</span><span>Pasá sin compromiso</span><span>Salí con un mod</span>
-      <span>✦ Se abrió el bazar</span><span>Pasá sin compromiso</span><span>Salí con un mod</span>
+      <span data-i18n="t0">✦ Se abrió el bazar</span><span data-i18n="t1">Pasá sin compromiso</span><span data-i18n="t2">Salí con un mod</span>
+      <span data-i18n="t0">✦ Se abrió el bazar</span><span data-i18n="t1">Pasá sin compromiso</span><span data-i18n="t2">Salí con un mod</span>
     </div>
   </div>
 
@@ -24,30 +24,31 @@
     <a class="cabecera__logo" href="#inicio"><img src="img/logo-hope-san.webp" alt="El Hope-san"></a>
     <nav class="cabecera__menu" aria-label="Secciones">
       <a class="boton boton--negro" href="#mods">Mods</a>
-      <a class="boton boton--crema" href="#votar">Votá</a>
+      <a class="boton boton--crema" href="#votar" data-i18n="t3">Votá</a>
       <a class="boton boton--discord" href="https://discord.gg/U3gHMNCzrk">Discord</a>
       <button class="boton boton--radio" type="button" aria-pressed="false">
         <img class="boton--radio__aparato" src="img/radio.webp" alt="">
         <span class="boton--radio__texto">Radio del bazar</span>
       </button>
+      <button class="boton boton--idioma" type="button" lang="en">EN</button>
     </nav>
     <audio id="radio" preload="none"></audio>
-    <p class="nota nota--atendido">Atendido por su propio oso* 👑</p>
+    <p class="nota nota--atendido" data-i18n="t5">Atendido por su propio oso* 👑</p>
   </header>
 
   <main id="inicio">
     <section class="portada">
       <div class="portada__texto">
-        <h1 class="titular">Entraste por un mod.<br>Te quedaste por el <span class="subrayado">lore</span>.</h1>
+        <h1 class="titular" data-i18n="t6">Entraste por un mod.<br>Te quedaste por el <span class="subrayado">lore</span>.</h1>
         <div class="portada__acciones">
-          <a class="boton boton--grande" href="#mods">Ver el inventario →</a>
-          <a class="enlace-discord" href="https://discord.gg/U3gHMNCzrk">Preguntar algo en Discord</a>
+          <a class="boton boton--grande" href="#mods" data-i18n="t7">Ver el inventario →</a>
+          <a class="enlace-discord" href="https://discord.gg/U3gHMNCzrk" data-i18n="t8">Preguntar algo en Discord</a>
         </div>
-        <p class="nota nota--maquina">Funciona en mi máquina ☺</p>
+        <p class="nota nota--maquina" data-i18n="t9">Funciona en mi máquina ☺</p>
       </div>
       <figure class="portada__oso">
-        <div class="sello sello--rojo" aria-hidden="true"><span>No vendemos humo*</span></div>
-        <p class="nota nota--aclaracion">*a veces partículas</p>
+        <div class="sello sello--rojo" aria-hidden="true"><span data-i18n="t10">No vendemos humo*</span></div>
+        <p class="nota nota--aclaracion" data-i18n="t11">*a veces partículas</p>
         <img src="img/oso-vendedor.webp" alt="El Hope-san, un oso con corona, atendiendo su puesto de mods">
       </figure>
     </section>
@@ -55,7 +56,7 @@
     <div class="franja" aria-hidden="true"></div>
 
     <section class="seccion" id="mods">
-      <h2 class="cartel">Recién salido del horno ♨</h2>
+      <h2 class="cartel" data-i18n="t12">Recién salido del horno ♨</h2>
 
       <article class="vitrina">
         <div class="vitrina__galeria">
@@ -65,24 +66,24 @@
         </div>
 
         <div class="vitrina__texto">
-          <p class="etiqueta etiqueta--vitrina">En la vitrina</p>
+          <p class="etiqueta etiqueta--vitrina" data-i18n="t13">En la vitrina</p>
           <h3 class="vitrina__titulo">ModaMod</h3>
-          <p class="vitrina__bajada">Ropa para Minecraft que se viste sobre el cuerpo, en capas. La cortás, la teñís, le estampás fotos y le pegás moños.</p>
+          <p class="vitrina__bajada" data-i18n="t14">Ropa para Minecraft que se viste sobre el cuerpo, en capas. La cortás, la teñís, le estampás fotos y le pegás moños.</p>
           <ul class="vitrina__lista">
-            <li>Remeras, buzos, polleras, capas, sombreros, borcegos y más.</li>
-            <li>Siete máquinas: Modeladora, Tintes, Sublimadora, Estilista, Telar, Guardarropas y Maniquí.</li>
-            <li>Patrones, animal print, fotos y apliques 3D.</li>
+            <li data-i18n="t15">Remeras, buzos, polleras, capas, sombreros, borcegos y más.</li>
+            <li data-i18n="t16">Siete máquinas: Modeladora, Tintes, Sublimadora, Estilista, Telar, Guardarropas y Maniquí.</li>
+            <li data-i18n="t17">Patrones, animal print, fotos y apliques 3D.</li>
             <li>Minecraft 1.21.1 · Fabric · Alpha.</li>
           </ul>
-          <p class="precio"><span>Precio:</span> gratis <small>(en serio)</small></p>
+          <p class="precio" data-i18n="t18"><span>Precio:</span> gratis <small>(en serio)</small></p>
           <div class="vitrina__botones">
             <a class="boton boton--negro" href="https://github.com/H0p3san/modamod">GitHub</a>
-            <span class="boton boton--apagado" title="Pronto">Modrinth · pronto</span>
-            <span class="boton boton--apagado" title="Pronto">CurseForge · pronto</span>
+            <span class="boton boton--apagado" title="Pronto" data-i18n="t19">Modrinth · pronto</span>
+            <span class="boton boton--apagado" title="Pronto" data-i18n="t20">CurseForge · pronto</span>
             <a class="boton boton--discord" href="https://discord.gg/U3gHMNCzrk">Discord</a>
-            <a class="boton boton--cafecito" href="https://cafecito.app/elhopesan">☕ Invitame un cafecito</a>
+            <a class="boton boton--cafecito" href="https://cafecito.app/elhopesan" data-i18n="t21">☕ Invitame un cafecito</a>
           </div>
-          <p class="nota nota--ia">Diseñado por un humano, hecho con IA.</p>
+          <p class="nota nota--ia" data-i18n="t22">Diseñado por un humano, hecho con IA.</p>
         </div>
       </article>
     </section>
@@ -90,152 +91,153 @@
     <div class="franja" aria-hidden="true"></div>
 
     <section class="seccion" id="votar">
-      <h2 class="cartel">Próximamente en el bazar 📦</h2>
-      <p class="seccion__bajada">Mercadería en camino. Algunos ya están en el depósito, otros siguen en el contenedor y uno no tiene papeles. Votá cuál querés que desembarque primero.</p>
-      <p class="nota nota--auditados">Votos auditados por nadie ☺</p>
-      <p class="seccion__leyenda">💳 Las cuotas son el esfuerzo: más cuotas, más laburo. 🏷️ La etiqueta dice dónde está la mercadería.</p>
+      <h2 class="cartel" data-i18n="t23">Próximamente en el bazar 📦</h2>
+      <p class="seccion__bajada" data-i18n="t24">Mercadería en camino. Algunos ya están en el depósito, otros siguen en el contenedor y uno no tiene papeles. Votá cuál querés que desembarque primero.</p>
+      <p class="nota nota--auditados" data-i18n="t25">Votos auditados por nadie ☺</p>
+      <p class="seccion__leyenda" data-i18n="t26">🚚 La demora del envío es el esfuerzo: más demora, más laburo*. 🏷️ La etiqueta dice dónde está la mercadería.</p>
+      <p class="seccion__nota" data-i18n="t27">*no es una fecha real, eh</p>
       <div class="productos">
         <article class="producto" data-clave="faces">
           <img class="producto__foto" src="img/mod-faces.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--vitrina">En la vitrina</p>
+          <p class="etiqueta etiqueta--vitrina" data-i18n="t13">En la vitrina</p>
           <h3 class="producto__nombre">Faces</h3>
-          <p class="cuotas"><strong>1 cuota</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">Un editor de caras animadas para tu personaje.</p>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t34">Demora: Llega mañana</span></p>
+          <p class="producto__bajada" data-i18n="t42">Un editor de caras animadas para tu personaje.</p>
           <ul class="producto__lista">
-            <li>Armás tu cara por capas: forma, fondo, ojos y boca, con ojos que se ajustan en forma y expresión.</li>
-            <li>Guardás hasta nueve expresiones y las cambiás al toque con una rueda (F9); la boca y los ojos se animan.</li>
-            <li>La cara se ve sobre distintos soportes: pantalla CRT, LED, LCD, holograma, una caja de cartón o una bolsa, con efectos de estática e interferencia.</li>
+            <li data-i18n="t43">Armás tu cara por capas: forma, fondo, ojos y boca, con ojos que se ajustan en forma y expresión.</li>
+            <li data-i18n="t44">Guardás hasta nueve expresiones y las cambiás al toque con una rueda (F9); la boca y los ojos se animan.</li>
+            <li data-i18n="t45">La cara se ve sobre distintos soportes: pantalla CRT, LED, LCD, holograma, una caja de cartón o una bolsa, con efectos de estática e interferencia.</li>
           </ul>
-          <p class="producto__remate">Ya casi está en la vitrina.</p>
+          <p class="producto__remate" data-i18n="t46">Ya casi está en la vitrina.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="titulos">
           <img class="producto__foto" src="img/mod-titulos.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--nuevo">Recién llegado</p>
-          <h3 class="producto__nombre">Títulos</h3>
-          <p class="cuotas"><strong>3 cuotas</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">Títulos y reconocimientos para lucir en el server.</p>
+          <p class="etiqueta etiqueta--nuevo" data-i18n="t28">Recién llegado</p>
+          <h3 class="producto__nombre" data-i18n="t47">Títulos</h3>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t35">Demora: 3 a 5 días hábiles</span></p>
+          <p class="producto__bajada" data-i18n="t48">Títulos y reconocimientos para lucir en el server.</p>
           <ul class="producto__lista">
-            <li>Ganás títulos por logros o porque alguien te los entrega.</li>
-            <li>Se muestran al lado de tu nombre.</li>
-            <li>Reconocen tu talento único y te dan un buff que va con él.</li>
+            <li data-i18n="t49">Ganás títulos por logros o porque alguien te los entrega.</li>
+            <li data-i18n="t50">Se muestran al lado de tu nombre.</li>
+            <li data-i18n="t51">Reconocen tu talento único y te dan un buff que va con él.</li>
           </ul>
-          <p class="producto__remate">Para que todos sepan quién ganó.</p>
+          <p class="producto__remate" data-i18n="t52">Para que todos sepan quién ganó.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="mate-delight">
           <img class="producto__foto" src="img/mod-mate-delight.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--nuevo">Recién llegado</p>
+          <p class="etiqueta etiqueta--nuevo" data-i18n="t28">Recién llegado</p>
           <h3 class="producto__nombre">Mate Delight</h3>
-          <p class="cuotas"><strong>6 cuotas</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">El mate, con toda su ceremonia, dentro de Minecraft.</p>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t36">Demora: Envío estándar</span></p>
+          <p class="producto__bajada" data-i18n="t53">El mate, con toda su ceremonia, dentro de Minecraft.</p>
           <ul class="producto__lista">
-            <li>Cultivás la yerba y armás el mate, la bombilla y el termo.</li>
-            <li>Lo cebás de a poco: ponés la yerba, agregás agua y vas tomando cebada por cebada hasta que se lava.</li>
-            <li>Distintas variedades de mate, con sus efectos al tomarlo.</li>
+            <li data-i18n="t54">Cultivás la yerba y armás el mate, la bombilla y el termo.</li>
+            <li data-i18n="t55">Lo cebás de a poco: ponés la yerba, agregás agua y vas tomando cebada por cebada hasta que se lava.</li>
+            <li data-i18n="t56">Distintas variedades de mate, con sus efectos al tomarlo.</li>
           </ul>
-          <p class="producto__remate">Pensado para llevarse bien con Farmer&#x27;s Delight.</p>
+          <p class="producto__remate" data-i18n="t57">Pensado para llevarse bien con Farmer&#x27;s Delight.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="miradas">
           <img class="producto__foto" src="img/mod-miradas.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--sinpapeles">Sin papeles</p>
-          <h3 class="producto__nombre">Hay miradas que matan</h3>
-          <p class="cuotas"><strong>6 cuotas</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">Auras que se activan con la mirada: las podés tener vos o te las puede tirar un mob.</p>
+          <p class="etiqueta etiqueta--sinpapeles" data-i18n="t29">Sin papeles</p>
+          <h3 class="producto__nombre" data-i18n="t58">Hay miradas que matan</h3>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t37">Demora: Envío estándar, si pasa la aduana</span></p>
+          <p class="producto__bajada" data-i18n="t59">Auras que se activan con la mirada: las podés tener vos o te las puede tirar un mob.</p>
           <ul class="producto__lista">
-            <li>Si mirás fijo a un bicho, le aplicás un aura: de daño, para lastimarlo, o de buffeo, para curarte o potenciarte.</li>
-            <li>Algunos mobs también tienen su mirada: si te miran, te afectan a vos, así que conviene no cruzarles la vista.</li>
-            <li>Por ejemplo, una mirada de Medusa que va volviendo piedra a quien mira, sea un bicho o un jugador.</li>
+            <li data-i18n="t60">Si mirás fijo a un bicho, le aplicás un aura: de daño, para lastimarlo, o de buffeo, para curarte o potenciarte.</li>
+            <li data-i18n="t61">Algunos mobs también tienen su mirada: si te miran, te afectan a vos, así que conviene no cruzarles la vista.</li>
+            <li data-i18n="t62">Por ejemplo, una mirada de Medusa que va volviendo piedra a quien mira, sea un bicho o un jugador.</li>
           </ul>
-          <p class="producto__remate">Como Medusa, pero con más ética.</p>
+          <p class="producto__remate" data-i18n="t63">Como Medusa, pero con más ética.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="terraformer">
           <img class="producto__foto" src="img/mod-terraformer.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--deposito">En el depósito</p>
+          <p class="etiqueta etiqueta--deposito" data-i18n="t30">En el depósito</p>
           <h3 class="producto__nombre">Terraformer</h3>
-          <p class="cuotas"><strong>12 cuotas</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">Herramientas para estudiar un bioma y reproducirlo en otro lado.</p>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t38">Demora: Envío lento</span></p>
+          <p class="producto__bajada" data-i18n="t64">Herramientas para estudiar un bioma y reproducirlo en otro lado.</p>
           <ul class="producto__lista">
-            <li>Un analizador que escanea una zona y reconoce su terreno, su vegetación y su clima.</li>
-            <li>Guardás eso como un patrón.</li>
-            <li>Un terraformador que aplica el patrón a otro terreno, lento y caro, para que no reemplace construir a mano.</li>
+            <li data-i18n="t65">Un analizador que escanea una zona y reconoce su terreno, su vegetación y su clima.</li>
+            <li data-i18n="t66">Guardás eso como un patrón.</li>
+            <li data-i18n="t67">Un terraformador que aplica el patrón a otro terreno, lento y caro, para que no reemplace construir a mano.</li>
           </ul>
-          <p class="producto__remate">Para cambiar el paisaje sin pala.</p>
+          <p class="producto__remate" data-i18n="t68">Para cambiar el paisaje sin pala.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="event-king">
           <img class="producto__foto" src="img/mod-event-king.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--contenedor">Viene en el contenedor</p>
+          <p class="etiqueta etiqueta--contenedor" data-i18n="t31">Viene en el contenedor</p>
           <h3 class="producto__nombre">Event King</h3>
-          <p class="cuotas"><strong>18 cuotas</strong> <small>sin interés</small></p>
-          <p class="producto__bajada">Una consola para organizar y dirigir eventos en vivo en tu server.</p>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t39">Demora: Por barco</span></p>
+          <p class="producto__bajada" data-i18n="t69">Una consola para organizar y dirigir eventos en vivo en tu server.</p>
           <ul class="producto__lista">
-            <li>Armás arenas que se guardan y se restauran solas al terminar, y los jugadores se anotan con /participo.</li>
-            <li>Secuencias de acciones (teletransportes, comandos, apariciones y cambios de escenario) que se disparan en orden o cuando se cumple una condición. Más adelante se suman la música, las luces y los efectos.</li>
-            <li>Durante el evento manejás todo desde una botonera rápida: congelar jugadores, invocar, cambiar el clima y elegir ganadores.</li>
+            <li data-i18n="t70">Armás arenas que se guardan y se restauran solas al terminar, y los jugadores se anotan con /participo.</li>
+            <li data-i18n="t71">Secuencias de acciones (teletransportes, comandos, apariciones y cambios de escenario) que se disparan en orden o cuando se cumple una condición. Más adelante se suman la música, las luces y los efectos.</li>
+            <li data-i18n="t72">Durante el evento manejás todo desde una botonera rápida: congelar jugadores, invocar, cambiar el clima y elegir ganadores.</li>
           </ul>
-          <p class="producto__remate">Antes se llamaba Stage Manager.</p>
+          <p class="producto__remate" data-i18n="t73">Antes se llamaba Stage Manager.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
         <article class="producto" data-clave="mobon">
           <img class="producto__foto" src="img/mod-mobon.webp" alt="" onerror="this.remove()">
-          <p class="etiqueta etiqueta--contenedor">Viene en el contenedor, de a partes</p>
+          <p class="etiqueta etiqueta--contenedor" data-i18n="t32">Viene en el contenedor, de a partes</p>
           <h3 class="producto__nombre">MOB-ON</h3>
-          <p class="cuotas"><strong>24 cuotas</strong> <small>con interés, y mucho</small></p>
-          <p class="producto__bajada">Biología experimental: extraé ADN de los mobs y convertite en ellos.</p>
+          <p class="envio"><strong data-i18n="t33">Precio: gratis</strong> · 🚚 <span data-i18n="t40">Demora: Por barco, en cuatro contenedores</span></p>
+          <p class="producto__bajada" data-i18n="t74">Biología experimental: extraé ADN de los mobs y convertite en ellos.</p>
           <ul class="producto__lista">
-            <li>Les sacás muestras con una jeringa, las analizás y te transformás en el bicho, con su tamaño, su forma de moverse y sus habilidades.</li>
-            <li>Llega en cuatro etapas: transformarte; enfermedades y contagios, como el Virus Z; cría selectiva y clones; y quimeras que mezclan especies.</li>
-            <li>Además trae Mimics, bichos que se disfrazan de objetos y te cazan.</li>
+            <li data-i18n="t75">Les sacás muestras con una jeringa, las analizás y te transformás en el bicho, con su tamaño, su forma de moverse y sus habilidades.</li>
+            <li data-i18n="t76">Llega en cuatro etapas: transformarte; enfermedades y contagios, como el Virus Z; cría selectiva y clones; y quimeras que mezclan especies.</li>
+            <li data-i18n="t77">Además trae Mimics, bichos que se disfrazan de objetos y te cazan.</li>
           </ul>
-          <p class="producto__remate">Pedilo con tiempo.</p>
+          <p class="producto__remate" data-i18n="t78">Pedilo con tiempo.</p>
           <div class="producto__voto">
-            <button class="boton boton--votar" type="button">👍 Lo quiero</button>
+            <button class="boton boton--votar" type="button" data-i18n="t41">👍 Lo quiero</button>
             <p class="contador" aria-live="polite"><strong>…</strong> lo quieren</p>
           </div>
         </article>
       </div>
       <div class="seccion__pie">
-        <p>¿Tenés una idea mejor? Traela al Discord. El criterio lo vemos después.</p>
-        <a class="boton boton--discord" href="https://discord.gg/U3gHMNCzrk">Proponer un mod en Discord</a>
+        <p data-i18n="t79">¿Tenés una idea mejor? Traela al Discord. El criterio lo vemos después.</p>
+        <a class="boton boton--discord" href="https://discord.gg/U3gHMNCzrk" data-i18n="t80">Proponer un mod en Discord</a>
       </div>
     </section>
 
     <div class="franja" aria-hidden="true"></div>
 
     <section class="seccion" id="gracias">
-      <h2 class="cartel">Gracias, proveedores 💛</h2>
+      <h2 class="cartel" data-i18n="t81">Gracias, proveedores 💛</h2>
       <div class="gracias">
         <div class="gracias__tarjeta">
-          <p class="gracias__quienes">Roger y Sosbaldo</p>
-          <p>Bancaron a la IA: pagaron parte de la que se usó para hacer ModaMod.</p>
+          <p class="gracias__quienes" data-i18n="t82">Roger y Sosbaldo</p>
+          <p data-i18n="t83">Bancaron a la IA: pagaron parte de la que se usó para hacer ModaMod.</p>
         </div>
         <div class="gracias__tarjeta">
-          <p class="gracias__quienes"><a href="https://www.twitch.tv/rozsier">Rozsier</a> y Galvhiar</p>
-          <p>Le dieron lugar al humano: me abrieron su servidor para experimentar.</p>
+          <p class="gracias__quienes" data-i18n="t84"><a href="https://www.twitch.tv/rozsier">Rozsier</a> y Galvhiar</p>
+          <p data-i18n="t85">Le dieron lugar al humano: me abrieron su servidor para experimentar.</p>
         </div>
       </div>
-      <p class="nota nota--gracias">¡Gracias por hacerlo posible!</p>
+      <p class="nota nota--gracias" data-i18n="t86">¡Gracias por hacerlo posible!</p>
     </section>
   </main>
 
@@ -243,16 +245,17 @@
   <footer class="pie">
     <div class="pie__remate">
       <img class="pie__oso" src="img/oso-icono.webp" alt="">
-      <p>No sé qué estoy haciendo, pero mirá qué <span class="subrayado">lindo</span>.</p>
-      <a class="enlace-discord enlace-discord--claro" href="https://discord.gg/U3gHMNCzrk">Sumate al quilombo →</a>
+      <p data-i18n="t87">No sé qué estoy haciendo, pero mirá qué <span class="subrayado">lindo</span>.</p>
+      <a class="enlace-discord enlace-discord--claro" href="https://discord.gg/U3gHMNCzrk" data-i18n="t88">Sumate al quilombo →</a>
     </div>
     <nav class="pie__enlaces" aria-label="Enlaces">
       <a href="https://github.com/H0p3san">GitHub</a>
       <a href="https://discord.gg/U3gHMNCzrk">Discord</a>
       <a href="https://cafecito.app/elhopesan">Cafecito</a>
     </nav>
-    <p class="pie__creditos">Diseñado por un humano, hecho con IA y atendido por su propio oso. Música de la radio: hecha con Suno. © 2026 H0p3san · ModaMod es MIT.</p>
+    <p class="pie__creditos" data-i18n="t89">Diseñado por un humano, hecho con IA y atendido por su propio oso. Música de la radio: hecha con Suno. © 2026 H0p3san · ModaMod es MIT.</p>
   </footer>
+  <script src="js/idioma.js" defer></script>
   <script src="js/votos.js" defer></script>
   <script src="js/radio.js" defer></script>
 </body>

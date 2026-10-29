@@ -277,8 +277,11 @@ a { color: inherit; }
 .producto__remate { font: 700 22px/1.1 "Caveat", cursive; color: var(--rojo); margin: 4px 0 16px; }
 .producto__voto { margin-top: auto; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
-.cuotas { margin: 0; font: 400 22px/1 "Anton", sans-serif; text-transform: uppercase; color: var(--rojo); }
-.cuotas small { font: 700 13px "Silkscreen", monospace; color: var(--negro); text-transform: lowercase; }
+.envio { margin: 0; font-size: 15px; }
+.envio strong { font: 400 20px/1 "Anton", sans-serif; text-transform: uppercase; color: var(--rojo); }
+.envio span { font-weight: 600; }
+.seccion__nota { margin: -24px auto 32px; text-align: center; font: 700 18px "Caveat", cursive; }
+.boton--idioma { background: var(--blanco); cursor: pointer; font-family: "Silkscreen", monospace; }
 
 .etiqueta--nuevo { background: #ffd1dc; }
 .etiqueta--sinpapeles { background: var(--negro); color: var(--amarillo); }

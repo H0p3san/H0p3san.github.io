@@ -27,10 +27,11 @@ function soltarParticula() {
   perilla.appendChild(p);
 }
 
-function mostrar(sonando) {
+// Nombres propios (mostrarRadio, mostrarVotos): los scripts comparten el espacio global y una "mostrar" pisaba a la otra.
+function mostrarRadio(sonando) {
   perilla.setAttribute("aria-pressed", sonando ? "true" : "false");
-  texto.textContent = sonando ? TEMAS[actual].nombre : "Radio del bazar";
-  perilla.title = !sonando ? "Prender la radio" : actual < TEMAS.length - 1 ? "Siguiente tema" : "Apagar la radio";
+  texto.textContent = sonando ? TEMAS[actual].nombre : frase("radio");
+  perilla.title = frase(!sonando ? "prender" : actual < TEMAS.length - 1 ? "siguiente" : "apagar");
   clearInterval(chispero);
   chispero = sonando && !quieto.matches ? setInterval(soltarParticula, 420) : null;
 }
@@ -38,13 +39,14 @@ function mostrar(sonando) {
 // Terminó un tema: el siguiente (y después del último, el primero).
 radio.addEventListener("ended", () => poner((actual + 1) % TEMAS.length));
 // El botón sigue al audio aunque se pause por otro lado (auriculares, teclas multimedia).
-radio.addEventListener("pause", () => { if (!radio.ended) mostrar(false); });
-radio.addEventListener("play", () => mostrar(true));
+radio.addEventListener("pause", () => { if (!radio.ended) mostrarRadio(false); });
+radio.addEventListener("play", () => mostrarRadio(true));
+document.addEventListener("idioma", () => mostrarRadio(!radio.paused));
 
 function poner(i) {
   actual = i;
   radio.src = TEMAS[actual].archivo;
-  radio.play().catch(() => mostrar(false));
+  radio.play().catch(() => mostrarRadio(false));
 }
 
 perilla.addEventListener("click", () => {
@@ -52,3 +54,5 @@ perilla.addEventListener("click", () => {
   else if (actual < TEMAS.length - 1) poner(actual + 1);        // sonando: el siguiente
   else radio.pause();                                           // el último: se apaga
 });
+
+mostrarRadio(false);   // el texto del botón en el idioma elegido
