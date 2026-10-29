@@ -214,6 +214,9 @@ a { color: inherit; }
 .precio span { color: var(--rojo); }
 .precio small { font: 700 20px "Caveat", cursive; text-transform: none; }
 
+.boton--radio { background: var(--amarillo); cursor: pointer; }
+.boton--radio[aria-pressed="true"] { background: var(--rojo); color: var(--blanco); }
+.boton--radio.sin-tema { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--cafecito { background: #f5a25d; }
 .boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--apagado:hover { transform: none; box-shadow: none; }
