@@ -274,6 +274,7 @@ a { color: inherit; }
 .billete img { width: 130px; filter: drop-shadow(4px 4px 0 var(--negro)); transition: transform .12s; }
 .billete:hover img, .billete:focus-visible img { transform: rotate(-4deg) scale(1.08); }
 .billete:focus-visible { outline: 3px dashed var(--rojo); outline-offset: 4px; }
+.boton--curseforge { background: #f16436; color: var(--blanco); }
 .boton--apagado { background: #ddd; color: #555; box-shadow: none; cursor: default; }
 .boton--apagado:hover { transform: none; box-shadow: none; }
 
